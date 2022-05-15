@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core | Onclick Event </title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+
+<body>
+
+
+    <div id="topheader">
+        <div id="mainmenu">
+            <h1 id="nav-title">Dojonary</h1>
+            <input placeholder="Search" type="Search">  
+            <button onclick="loginlogout(this)" >Login</button>     
+        </div>       
+    </div>
+
+    <div id="background">
+
+        <div id="column1">
+
+            <div class="infobox">
+                <div class="wordbox">
+                    <h1>ninja</h1>        
+                    <h3><em>noun</em></h3>
+                    <h3>Plural: <em>ninjas</em></h3>
+                    <button onclick="alert('Ninja was liked')">13 likes</button>  
+                </div>                     
+                <h2>A practitioner skilled in the <a href="#">Japanese</a> art of <a href="#">ninjutsu</a></h2>
+            </div>
+
+
+            <div class="infobox">
+                <div class="wordbox">
+                    <h1>ninja</h1>        
+                    <h3><em>noun</em></h3>
+                    <h3>Plural: <em>ninjas</em></h3>
+                    <button onclick="alert('Ninja was liked')">37 likes</button>  
+                </div>                     
+                <h2>A <a href="#">programmer</a> who breaks down problems with <a href="#">zen</a>-like focus</h2>                
+            </div>
+
+        </div>
+
+        <div id="column2">
+            <div class="infobox">
+                <h1>Dojonary is defined by YOU</h1>
+                <button onclick="remove(this)">Add Definition</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

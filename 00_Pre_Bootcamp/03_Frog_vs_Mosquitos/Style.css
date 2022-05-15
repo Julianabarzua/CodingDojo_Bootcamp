@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+#background{
+    background-color: black;
+    width: 700px;
+    height: 900px;
+
+}
+
+#swamp {
+    background-image: url("swamp.png");
+    width: 650px;
+    height: 850px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+.player{
+    position: absolute;
+    background-image: url("frog.png");
+    width: 100px;
+    height: 152px;
+}
+
+.enemy{
+    position: absolute;
+    background-image: url("mosquito2.png");
+    width: 169px;
+    height: 144px;
+}
+
+.missile{
+    position: absolute;
+    width: 6px;
+    height: 20px;
+    background-color: rgb(255, 174, 0);
+}

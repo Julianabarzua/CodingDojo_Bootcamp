@@ -1,0 +1,42 @@
+body {
+    
+    padding: 50px;
+}
+
+button {
+    margin: 8px;
+}
+
+#button1 {
+    border-radius: 15px;
+    border: 2px solid darkturquoise;
+    color: darkturquoise;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size:medium ;
+}
+
+#button2 {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: none;
+    background-color:darkturquoise;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+
+#button3 {
+    
+    border: 2px solid black;
+    color: white;
+    background-color:dodgerblue;
+    width: 180px;
+    height: 30px;
+    text-align: center;
+    font-size:medium ;
+    box-shadow: 3px 3px black;
+}

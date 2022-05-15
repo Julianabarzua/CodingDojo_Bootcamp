@@ -1,0 +1,283 @@
+<html>
+
+<head>
+    <title>NinjaMan Prueba GitHub</title>
+    <link rel="stylesheet" href="style.css"    
+</head>
+
+<body>
+    <div id="world"></div>    
+    <div id="points"></div>
+    <div id="pumpkin"></div>
+    <div id="pinky"></div>
+    <div id="ninjaman"></div>
+    <button onclick="restart()">Restart</button>
+</body>
+
+<script type="text/javascript">
+
+    var world = []
+
+
+    function generateworld(){
+        world = [[1,1,1,1,1,1,1,1,1,1],[1,0,0,0,0,0,0,0,0,1]]
+        var rows = 20
+        var columns = 10
+
+        for(var row=0; row<rows-4;row++){
+            var list = [1,0]
+            for(var box=0; box<columns-4; box++){
+                var valor = Math.floor(Math.random() * 4);
+                list.push(valor)
+            }
+            list.push(0)
+            list.push(1)
+            world.push(list)
+        }
+        world.push([1,0,0,0,0,0,0,0,0,1],[1,1,1,1,1,1,1,1,1,1])
+    }
+    generateworld()
+    
+    var worldDict = {
+        0: 'blank',
+        1: 'wall',
+        2: 'sushi',
+        3: 'onigiri',
+    }
+
+    function drawWorld() {
+        output = "";
+
+        for(var row=0; row<world.length;row++){
+            output += "<div class = 'row'></div>"
+
+            for(var x=0; x < world[row].length; x++){
+                output += "<div class = '"+ worldDict[
+                    world[row][x]] +"''></div>"
+            }
+        }
+        output +="</div>"        
+        document.getElementById('world').innerHTML = output;
+    }
+    
+
+    var ninjaman = {
+        x:1,
+        y:1
+    }
+
+    function drawNinjaman(){
+        document.getElementById('ninjaman').style.top = ninjaman.y * 40+'px'
+        document.getElementById('ninjaman').style.left = ninjaman.x * 40+'px'
+    }
+
+    var pumpkin = {
+        x:8,
+        y:18
+    }
+
+    function drawpumpkin(){
+        document.getElementById('pumpkin').style.top = pumpkin.y * 40+'px'
+        document.getElementById('pumpkin').style.left = pumpkin.x * 40+'px'
+    }
+
+    var pinky = {
+        x:8,
+        y:1
+    }
+
+    function drawpinky(){
+        document.getElementById('pinky').style.top = pinky.y * 40+'px'
+        document.getElementById('pinky').style.left = pinky.x * 40+'px'
+    }
+
+    function drawpoints(p,v){
+        document.getElementById('points').innerHTML = "<h1>"+p+" pts // "+v+" vidas </h1>"
+    }
+
+    function lostlife(){
+
+        ninjaman = {
+        x:1,
+        y:1
+        }
+        pinky = {
+        x:8,
+        y:1
+        }
+        pumpkin = {
+        x:8,
+        y:18
+        }
+    }
+    
+    function restart(){
+        document.body.innerHTML='<div id="world"></div><div id="points"></div><div id="pumpkin"></div><div id="pinky"></div><div id="ninjaman"></div><button onclick="restart()">Restart</button>'
+        puntos = 0;
+        vidas = 3;
+        generateworld()
+        drawWorld()        
+        lostlife()
+        drawpoints(puntos,vidas)
+        drawpumpkin()
+        drawpinky()        
+        drawNinjaman()     
+
+
+    }
+    
+    var puntos = 0
+    var vidas = 3
+    
+    drawNinjaman()
+    drawWorld()
+    drawpoints(puntos,vidas)
+    drawpumpkin()
+    drawpinky()
+
+    document.onkeydown = function(e){
+        if(e.keyCode==37){
+            if(world[ninjaman.y][ninjaman.x-1] ==0){
+                ninjaman.x--;
+            }
+            else if(world[ninjaman.y][ninjaman.x-1] ==2){
+                ninjaman.x--;
+                puntos += 10;
+            }
+            else if(world[ninjaman.y][ninjaman.x-1] ==3){
+                ninjaman.x--;
+                puntos += 20;
+            }
+        }
+
+        if(e.keyCode==39){
+            if(world[ninjaman.y][ninjaman.x+1] ==0){
+                ninjaman.x++;
+            }
+            else if(world[ninjaman.y][ninjaman.x+1] ==2){
+                ninjaman.x++;
+                puntos += 10;
+            }
+            else if(world[ninjaman.y][ninjaman.x+1] ==3){
+                ninjaman.x++;
+                puntos += 20;
+            }
+        }
+
+        if(e.keyCode==38){
+            if(world[ninjaman.y-1][ninjaman.x] ==0){
+                ninjaman.y--;
+            }
+            else if(world[ninjaman.y-1][ninjaman.x] ==2){
+                ninjaman.y--;
+                puntos += 10;
+            }
+            else if(world[ninjaman.y-1][ninjaman.x] ==3){
+                ninjaman.y--;
+                puntos += 20;
+            }
+        }
+        
+        if(e.keyCode==40){
+            if(world[ninjaman.y+1][ninjaman.x] ==0){
+                ninjaman.y++;
+            }
+            else if(world[ninjaman.y+1][ninjaman.x] ==2){
+                ninjaman.y++;
+                puntos += 10;
+            }
+            else if(world[ninjaman.y+1][ninjaman.x] ==3){
+                ninjaman.y++;
+                puntos += 20;
+            }
+        }                     
+        
+        
+        if(Math.abs(ninjaman.x-pumpkin.x)>Math.abs(ninjaman.y-pumpkin.y)){
+            if(ninjaman.x>pumpkin.x){
+                if(world[pumpkin.y][pumpkin.x+1] != 1){
+                pumpkin.x++;
+                }
+            }
+            else if(ninjaman.x<pumpkin.x){
+                if(world[pumpkin.y][pumpkin.x-1] != 1){
+                pumpkin.x--;
+                }        
+            }            
+        }
+        
+        else{
+
+            if(ninjaman.y>pumpkin.y){
+                if(world[pumpkin.y+1][pumpkin.x] !=1){                    
+                pumpkin.y++;
+                }
+            }
+            else if(ninjaman.y<pumpkin.y){
+                if(world[pumpkin.y-1][pumpkin.x] !=1){
+                pumpkin.y--;
+                }
+            }
+                        
+        }
+        if(Math.abs(ninjaman.x-pinky.x)>Math.abs(ninjaman.y-pinky.y)){
+            if(ninjaman.x>pinky.x){
+                if(world[pinky.y][pinky.x+1] != 1){
+                pinky.x++;
+                }
+            }
+            else if(ninjaman.x<pinky.x){
+                if(world[pinky.y][pinky.x-1] != 1){
+                pinky.x--;
+                }        
+            }            
+        }
+        
+        else{
+
+            if(ninjaman.y>pinky.y){
+                if(world[pinky.y+1][pinky.x] !=1){                    
+                pinky.y++;
+                }
+            }
+            else if(ninjaman.y<pinky.y){
+                if(world[pinky.y-1][pinky.x] !=1){
+                pinky.y--;
+                }
+            }
+                        
+        }
+        
+        if (ninjaman.x == pumpkin.x && ninjaman.y == pumpkin.y){
+
+            vidas--;            
+            lostlife()
+        } 
+        else if (ninjaman.x == pinky.x && ninjaman.y == pinky.y){
+
+            vidas--;            
+            lostlife()
+        } 
+        
+        
+
+
+        world[ninjaman.y][ninjaman.x] = 0;
+
+        if(vidas ==0){
+            var element = document.getElementById("ninjaman");
+            element.remove();
+            drawpoints(puntos,vidas);
+        }
+        else{
+            drawNinjaman()
+            drawWorld()
+            drawpoints(puntos,vidas)
+            drawpumpkin()
+            drawpinky()
+        }    
+    }
+
+</script>
+
+</html>

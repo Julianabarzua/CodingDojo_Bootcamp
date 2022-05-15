@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    /* border: 1px dashed orangered; */
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+
+/* TOPHEADER */
+
+#topheader{
+    display: flex;
+    justify-content: center;
+}
+
+#topheader #mainmenu{
+    background-color: #CDCCCC;
+    height: 110px;
+    width: 1085px ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#topheader #nav-title{  
+    font-family: 'Roboto', sans-serif;
+    color: black;    
+    font-weight: 800;
+    font-size: 60px;
+}
+
+#topheader input{      
+    width: 445px;
+    height: 48px;
+    font-size: 30px;
+    padding: 10px;
+    border: 3px solid black; 
+    font-family: 'Roboto', sans-serif;  
+}
+
+#topheader button{
+    width: 96px;
+    height: 39px;
+    color: white;
+    background-color: #17a2b8;
+    box-shadow: 8px 6px black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    border: 4px solid black;
+}
+
+
+/* BACKGROUND */
+
+
+
+#background{
+
+    display: flex;
+    justify-content: space-between;
+    width: 1085px;
+}
+
+#background h1,h2,h3,button{
+    font-family: 'Roboto', sans-serif;  
+}
+
+#background #column1 {
+    width: 710px;
+    height: 700px;
+}
+
+#background #column2 {
+    width: 340px;
+    height: 700px;
+}
+
+
+
+
+/* COLUMN1 INFOBOX */
+
+#column1 .infobox{
+
+    height: 290px;
+    border: 6px solid black;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.wordbox{
+    width: 350px;
+    height:233px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wordbox h1{
+    font-weight: 800;
+    font-size: 55px ;
+}
+
+.wordbox h3{
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.infobox h2{
+    font-weight: 500;
+    font-size: 27px;
+    margin: 71px;
+}
+
+.wordbox button{
+    width: 150px;
+    height: 50px;
+    background-color: #FFD966;
+    font-size: 22px;
+    box-shadow: 8px 6px black;
+    border: 4px solid black;
+}
+
+
+
+/* COLUMN2 INFOBOX */
+
+#column2 .infobox{
+    height: 237px;
+    border: 6px solid black;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#column2 h1{
+    font-size: 35px;
+    font-weight: 500;
+    margin: 20px;
+
+}
+
+#column2 button{
+    width: 285px;
+    height: 50px;
+    background-color: #93C47D;
+    font-size: 22px;
+    box-shadow: 8px 6px black;
+    border: 4px solid black;
+}
+

@@ -1,0 +1,27 @@
+body {
+    background-color: gainsboro;
+}
+
+h1 {
+    color: orangered;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    font-weight: bolder;
+}
+
+p {
+    outline: 3px solid red;
+    display: inline;
+    
+}
+
+*:hover{
+    border: 1px solid #f1c40f
+}
+
+.container {
+    background-color: ghostwhite;
+    margin: auto;
+    width: 60%;
+    padding: 40px;
+    
+}
