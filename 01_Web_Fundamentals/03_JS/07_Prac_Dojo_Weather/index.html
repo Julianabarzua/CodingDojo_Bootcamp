@@ -12,31 +12,87 @@
         <div class="flex-container head">
             <h1>DojoWeather</h1>
             <div class="flex-container">
-                <h3>Burbank</h3>
-                <h3>Chicago</h3>
-                <h3>Dallas</h3>
+                <h3 onclick='alert("Loading weather report")'>Burbank</h3>
+                <h3 onclick='alert("Loading weather report")'>Chicago</h3>
+                <h3 onclick='alert("Loading weather report")'>Dallas</h3>
             </div>
         </div>
     </header>
 
+
+
     <main>
+        
+        
         <div id="title" class="flex-container">
             <h2>San Jose</h2>
             <div id="temp" class="flex-container">
-                <label>show temperature in</label>        
-                <select>
+                <h5>show temperature in</h5>        
+                <select onchange="changeTemps(this)">
                     <option>C°</option>
                     <option>F°</option>
                 </select>
             </div>
         </div>
-        
 
 
 
+
+        <div id="sections-box" class="flex-container">
+            <section class="flex-container">
+                <h3 >Today</h3>
+                <img src="./assets/some_rain.png" alt="some rain">
+                <h5>some rain</h5>
+                <div class="flex-container maxmin">
+                    <h3 id="t0" style="color:red;">24°</h3>
+                    <h3 id="t1" style="color:blue;">18°</h3>
+                </div>
+            </section>
+
+            <section class="flex-container">
+                <h3 >Tomorrow</h3>
+                <img src="./assets/some_sun.png" alt="some rain">
+                <h5>some sun</h5>
+                <div class="flex-container maxmin">
+                    <h3 id="t2" style="color:red;">27°</h3>
+                    <h3 id="t3" style="color:blue;">19°</h3>
+                </div>
+            </section>
+
+            <section class="flex-container">
+                <h3 >Friday</h3>
+                <img src="./assets/some_clouds.png" alt="some rain">
+                <h5>some clouds</h5>
+                <div class="flex-container maxmin">
+                    <h3 id="t4" style="color:red;">21°</h3>
+                    <h3 id="t5" style="color:blue;">16°</h3>
+                </div>
+            </section>
+
+            <section class="flex-container">
+                <h3 >Saturday</h3>
+                <img src="./assets/some_sun.png" alt="some rain">
+                <h5>some sun</h5>
+                <div class="flex-container maxmin">
+                    <h3 id="t6" style="color:red;">26°</h3>
+                    <h3 id="t7" style="color:blue;">11°</h3>
+                </div>
+            </section>
+        </div>
+
+    
     </main>
 
-    <div id="cookies"></div>
+    <div id="cookies" class="flex-container">
+        <img src="./assets/cookie.png" alt="coockies">
+        <div id="text" class="flex-container">
+            <h4> <strong>Stop! Cookie time</strong></h4> 
+            <h5>we use cookies (sadly not the edible ones) to personalize content and ads, to provide social media features and to analyze our traffic. <a href="#">Read More</a> </h5>
+        </div>
+        <button onclick="remove()"><strong> I Accept</strong></button>
+    </div>
+
+    <script src="./script.js"></script>
     
 </body>
 </html>
