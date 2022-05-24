@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Fundamentals - Belt Exam - Julián Abarzúa</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="flex-cont">
+
+        <div id="links-box" class="flex-cont">
+            <a href="#"><img src="./images/logo.png" alt="logo"></a>
+            <a href="#"><h4 class="active"><b>Home</b></h4></a>
+            <a href="#"><h4>Documentation</h4></a>
+            <a href="#"><h4>Examples</h4></a>
+            <a href="#"><h4>Themes</h4></a>
+            <a href="#"><h4>Expo</h4></a>
+            <a href="#"><h4>Blog</h4></a>
+        </div>
+
+        <div id="buttons-box" class="flex-cont">
+            <select onchange="changeVersion(this)" id="version-select">
+                <option>v4.3</option>
+                <option>v4.1</option>
+                <option>v3.8</option>
+            </select>
+            <a href="#"><img src="./images/ico-git.png" alt="git"></a>
+            <a href="#"><img src="./images/ico-twitter.png" alt="twit"></a>
+            <a href="#"><img src="./images/ico-slack.png" alt="slack"></a>
+            <a href="#"><img src="./images/ico-coll.png" alt="coll"></a>
+            <button>Download</button>
+        </div>
+
+
+    </header>
+
+    <main>
+
+        <div id="main-box1" class="flex-cont">
+
+            <div id="artc-image" class="flex-cont">
+
+                <article>
+                    <h1>Bootstrap</h1>
+                    <p>Build responsive, mobile-first projects on the web with the world's most popular front-end component library. <br><br> Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.</p>
+                    <div>  
+                        <button id="btn1" onclick='startingAlert()'> Get Started</button>
+                        <button id="btn2" onclick="add1()" >Download</button>
+                    </div>
+                    <h4 id="version">DOWNLOAD VERSION v4.3 - TOTAL DOWNLOADS: 0</h4>
+                </article>
+
+                <img src="./images/main_img.png" alt="mainimage">
+
+            </div>
+            
+            <div id="grey-box" class="flex-cont">
+
+                <img src="./images/adsegment.png" alt="xx">
+                <p style="font-size: 13px"> <span style="font-weight: normal ;"> Collect customer data once with a single API. <br> Power your entire tech stack. </span> <br>ads via Carbon</p>
+
+            </div>
+        
+        </div>
+        
+
+        <div id="main-box2" class="flex-cont">
+
+            <section>
+                <img class="icon" src="./images/ico-install.png" alt="">
+                <h2>Installation</h2>
+                <p style="font-size: 16px;">Include Bootstrap's source Sass and Javascript files via npm, Composer or Meteor. Package managed installs don't include documentation, but do include our build system and readme.</p>
+                <p class="code">$ npm install bootstrap</p>
+                <p class="code">$ gem install bootstrap -v 4.3.1</p>
+                <hr>
+                <button>Read Installation docs</button>
+            </section>
+
+            <section>
+                <img class="icon" src="./images/ico-cdn.png" alt="">
+                <h2>BootstrapCDN</h2>
+                <p style="font-size: 16px;">When you only need to include Bootstrap's compiled CSS or JS, you can use<a href="#">BootstrapCDN.</a></p>
+                <h3>CSS only</h3>
+                <p class="code scrollx"> "linkhref="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-</p>
+                <h3>JS, Popper.js, and Query</h3>
+                <p class="code scrollx"> "linkhref="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0- "linkhref="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0- "linkhref="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-</p>
+                <hr>
+                <button>Explore the docs</button>
+            </section>
+
+            <section>
+                <img class="icon" src="./images/ico-themes.png" alt="">
+                <h2>Official Themes</h2>
+                <p style="font-size: 16px;">Take Bootstrap 4 to the next level with official premium themes-toolkits built on bootstrap with new components and plugins, docs, and build tools.</p>
+                <img src="./images/theme_img.png" alt="">
+                <hr>
+                <button>Browse themes</button>
+            </section>
+
+        </div>
+        
+    </main>
+
+    <footer>
+        <div id="links-foot" class="flex-cont">
+            <a href="#"><h5>Github</h5></a>
+            <a href="#"><h5>Twitter</h5></a>
+            <a href="#"><h5>Examples</h5></a>
+            <a href="#"><h5>About</h5></a>
+        </div>
+        <p style="font-size: 13px;">Designed and built with all the love in the world by the <span style="font-weight:normal;">Bootstrap team </span>with the help of <span style="font-weight:normal;">our contributors.</span> <br> Currently  v4.3.1. Code licensed <span style="font-weight:normal;">MIT</span>, docs <span style="font-weight:normal;">CC by 3.0.</span>   </p>
+
+
+    </footer>
+
+    
+
+    <script src="./script.js"></script>
+</body>
+</html>
