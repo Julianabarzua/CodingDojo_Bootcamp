@@ -96,7 +96,6 @@ section img{
     border: 2px solid black;
     background-color: #eeeeee;
     justify-content: space-between;
-    position: fixed;
     left: 130px;
     top: 420px
 }
