@@ -33,15 +33,14 @@
 # for x in range(2018,0,-4):
 #     print(x)
 
-#Comenzando en lowNum y pasando por highNum, imprime solo los enteros que sean múltiplos de mult.
-lowNum = int(input('Ingrese lowNum: '))
-highNum = int(input('Ingrese highNum: '))
-mult = int(input('Ingrese multiplicador: '))
+# #Comenzando en lowNum y pasando por highNum, imprime solo los enteros que sean múltiplos de mult.
+# lowNum = int(input('Ingrese lowNum: '))
+# highNum = int(input('Ingrese highNum: '))
+# mult = int(input('Ingrese multiplicador: '))
 
-for x in range(lowNum,highNum+1):
-    if x%mult == 0:
-        print(x)
-
+# for x in range(lowNum,highNum+1):
+#     if x%mult == 0:
+#         print(x)
 
 
 
