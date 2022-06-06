@@ -8,16 +8,21 @@ class Usuario:
     # agregando el método de depósito
     def hacer_deposito(self, amount):
         self.balance_cuenta += amount
+        return self
 
     def hacer_retiro(self,amount):
         self.balance_cuenta -= amount
+        return self
+
 
     def mostrar_balance_usuario(self):
         print(f"Usuario: {self.name}, Balance: ${self.balance_cuenta}")
+        return self
 
     def transfer_dinero(self,other_user,amount):
         self.balance_cuenta -=amount
         other_user.balance_cuenta +=amount
+        return self
 
 dani = Usuario("Daniela Andrade", "daniand@jmail.com")
 pancho = Usuario('Francisco Fuentes', 'franfu@jmail.com')
