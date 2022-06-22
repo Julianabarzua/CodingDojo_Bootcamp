@@ -1,0 +1,16 @@
+*{
+    padding: 10px;
+    margin: 0;
+}
+
+
+p{
+    width: 500px;
+    text-align: justify;
+    margin: 0 auto;
+}
+
+h1{
+    width: 500px;
+    margin: 0 auto;
+}
