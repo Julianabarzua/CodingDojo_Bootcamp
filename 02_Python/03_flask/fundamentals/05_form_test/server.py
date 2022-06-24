@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect # solicitud agregada
+from flask import Flask, render_template, request, redirect, session
 
 
 
 app = Flask(__name__)
+app.secret_key = "Calamardo"
 
 
 # nuestra ruta de índice manejará la representación de nuestro formulari
@@ -15,10 +16,14 @@ def index():
 def create_user():
     print("Got Post Info")
     print(request.form)
-    # Nunca renderices una plantilla en una solicitud POST
-    # En su lugar, redirigiremos a nuestra ruta de índice
-    return redirect('/')
+    session['username'] = request.form['name']
+    session['useremail'] = request.form['email']
 
+    return redirect('/show')
+
+@app.route('/show')
+def show_user():
+    return render_template('show.html', name_on_template=session['username'], email_on_template=session['useremail'])
 
 
 
