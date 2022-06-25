@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* border: 1px dashed orangered; */
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
+
+header{
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1,h2,h3,h4{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h3,h4{
+    font-weight: lighter;
+}
+
+section{
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+#goldbox{
+    border: 2px solid black;
+    width: 100px;
+}
+
+#goldnumber{
+    margin-left: 8px;
+}
+
+#forms-wrapper{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#textbox{
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.mainblock{
+    margin-bottom: 20px;
+}
