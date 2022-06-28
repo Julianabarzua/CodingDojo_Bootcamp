@@ -1,0 +1,7 @@
+cambiando el usuario:
+pymysql.err.OperationalError: (1045, "Access denied for user 'rut'@'localhost' (using password: YES)")
+
+cambiando el host:
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localchost' ([Errno 11001] getaddrinfo failed)")
+
+
