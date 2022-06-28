@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* border: 1px dashed orangered; */
+}
+
+body{
+    padding: 20px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+main{
+    flex-direction: column;
+}
+
+
+
+h1,h2,h3,h4, h5,a {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+.flexbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.lighter{
+    font-weight: lighter;
+}
+
+#user{
+    margin: 10px
+}
