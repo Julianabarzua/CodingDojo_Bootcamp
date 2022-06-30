@@ -5,18 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit User</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
+
 </head>
 <body>
-    <h1>Im editing</h1>
-    <form action="/edit_user" method="post">
-        <label for="fname">First Name:</label>
-        <input type="text" name="fname" value="{{user[0].first_name}}">
-        <label for="lname">Last Name:</label>
-        <input type="text" name="lname" value="{{user[0].last_name}}"">
-        <label for="occ" >Email:</label>
-        <input type="email" name="email" value="{{user[0].email}}">
-        <input type="submit" value="Edit User">
-    </form>
-    <a href="/">Home</a>
+    <div id="bigcolumn">
+
+        <h1 class="titulo">Edit user {{user[0].id}} </h1>
+        <form action="/edit_user/{{user[0].id}}" method="post">
+            <div>
+
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname" value="{{user[0].first_name}}">
+            </div>
+            <div>
+
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname" value="{{user[0].last_name}}"">
+            </div>
+            <div>
+
+                <label for="occ" >Email:</label>
+                <input type="email" name="email" value="{{user[0].email}}">
+            </div>
+            <input type="submit" value="Edit User">
+        </form>
+        <a href="/">Home</a>
+    </div>
+
 </body>
 </html>

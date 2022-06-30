@@ -57,12 +57,12 @@ def create_friend():
     # No olvides redirigir después de guardar en la base de datos
     return redirect('/users')
 
-@app.route('/edit_user', methods=["POST"])
-def edit_fuser():
+@app.route('/edit_user/<id>', methods=["POST"])
+def edit_fuser(id):
     data = {
         "fname": request.form["fname"],
         "lname" : request.form["lname"],
-        "email" : request.form["email"]
+        "email" : request.form["email"],
     }
-    User.update(data)
+    User.update(data, id=id)
     return redirect('/users')

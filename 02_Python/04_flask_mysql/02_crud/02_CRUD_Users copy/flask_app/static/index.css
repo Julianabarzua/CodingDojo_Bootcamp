@@ -5,9 +5,8 @@
 }
 
 body{
-    padding: 20px;
-    width: 800px;
-    margin: 0 auto;
+    padding: 0 20px;
+    background-color: whitesmoke;
 }
 
 main{
@@ -15,10 +14,15 @@ main{
 }
 
 
-
-h1,h2,h3,h4, h5,a {
+h1,h2,h3,h4, h5,a, form {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
+}
+
+
+.titulo{
+    margin: 20px;
+    color: #0aa4e0;
 }
 
 .flexbox{
@@ -30,6 +34,13 @@ h1,h2,h3,h4, h5,a {
 
 .lighter{
     font-weight: lighter;
+}
+
+#bigcolumn{
+    background-color:white;
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 #user{

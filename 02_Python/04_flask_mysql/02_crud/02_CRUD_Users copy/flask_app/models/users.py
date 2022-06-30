@@ -43,8 +43,8 @@ class User:
         return connectToMySQL('users_schema').query_db( query)
 
     @classmethod
-    def update(cls, data ):
-        query = "UPDATE users SET first_name = %(fname)s , last_name= %(lname)s , email= %(email)s , updated_at = NOW();"
+    def update(cls, data, id):
+        query = "UPDATE users SET first_name = %(fname)s , last_name= %(lname)s , email= %(email)s , updated_at = NOW() WHERE id="+id+";"
         # data es un diccionario que se pasará al método de guardar desde server.py
         return connectToMySQL('users_schema').query_db( query, data )
 

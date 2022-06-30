@@ -8,40 +8,44 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
 
 </head>
+
 <body>
-    <h1>All Users</h1>
+    <div id="bigcolumn">
 
-<table id="customers">
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        {% for one_user in users %}
-            <tr>
-                <td>{{one_user.first_name}}</td>
-                <td>{{one_user.last_name}}</td>
-                <td>{{one_user.email}}</td>
-                <td>
-                    <a href="/users/{{one_user.id}}">Show</a>
-                    <a href="#">|</a>
-                    <a href="/users/{{one_user.id}}/edit">Edit</a>
-                    <a href="#">|</a>
-                    <a href="/users/{{one_user.id}}/destroy">Delete</a>
-                </td>
-            </tr>
-        {% endfor %}
-
-    </tbody>
-
-    
-</table>
-<a href="/users/new">Add a new user</a>
-
+        <h1 class="titulo">All Users</h1>
+        
+        <table id="customers">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+            {% for one_user in users %}
+                <tr>
+                    <td>{{one_user.first_name}}</td>
+                    <td>{{one_user.last_name}}</td>
+                    <td>{{one_user.email}}</td>
+                    <td>
+                        <a href="/users/{{one_user.id}}">Show</a>
+                        <a href="#">|</a>
+                        <a href="/users/{{one_user.id}}/edit">Edit</a>
+                        <a href="#">|</a>
+                        <a href="/users/{{one_user.id}}/destroy">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+            
+            
+        </table>
+        <a href="/users/new">Add a new user</a>
+    </div>
+        
 </body>
 </html>
