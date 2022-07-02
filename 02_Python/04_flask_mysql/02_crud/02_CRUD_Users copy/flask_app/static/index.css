@@ -16,13 +16,16 @@ main{
 
 h1,h2,h3,h4, h5,a, form {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: center;
 }
 
 
 .titulo{
-    margin: 20px;
+    margin: 20px 0;
     color: #0aa4e0;
+}
+
+a{
+    margin-top: 15px;
 }
 
 .flexbox{
@@ -41,6 +44,8 @@ h1,h2,h3,h4, h5,a, form {
     width: 800px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 #user{
