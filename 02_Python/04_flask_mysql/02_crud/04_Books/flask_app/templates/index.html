@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prueba-flask-Mysql</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
+
+</head>
+
+<body>
+    <div id="bigcolumn">
+        
+        <div class="half-column">
+            <h1 class="titulo">New Author</h1>
+
+            <form action="/create_author" method="post">
+                <label for="fname">Name:</label>
+                <input type="text" name="name">
+                <input type="submit" value="Create">
+            </form>
+
+        </div>
+        
+        <div class="half-column">
+            <h1 class="titulo">All Authors</h1>
+
+            
+            <div id="authorslist" class="list-box">
+                {% for one_author in authors %}
+                <a href="/authors/{{one_author.id}}">{{one_author.name}}</a>
+                {% endfor %}
+            </div>
+
+            <a href="/books">Add Book</a>
+        </div>
+                
+
+        
+</body>
+</html>
