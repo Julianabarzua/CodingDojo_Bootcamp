@@ -42,7 +42,7 @@ class Email:
 
         for correo in all_emails:
             if email['email'] == correo.email:
-                flash('Mail already registered')
+                flash('Mail already registered, please add a new one')
                 is_valid = False
 
         return is_valid

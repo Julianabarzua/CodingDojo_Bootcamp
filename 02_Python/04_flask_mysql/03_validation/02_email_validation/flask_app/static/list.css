@@ -8,7 +8,7 @@ body{
     background-color: whitesmoke;
 }
 
-h1,h2,h3,h4, h5,a, form, p {
+h1,h2,h3,h4, h5,a, form {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     /* text-align: center; */
 }
@@ -16,6 +16,10 @@ h1,h2,h3,h4, h5,a, form, p {
 .titulo{
     margin: 20px 0;
     color: #0aa4e0;
+}
+
+.row{
+    display: flex;
 }
 
 #bigcolumn{
@@ -47,11 +51,13 @@ input[type=submit]{
 }
 
 a{
-    margin-top: 15px;
+    margin-left: 15px;
 }
 
-p{
-    margin-top: 15px;
-    color: red;
-    font-weight: bolder;
+ul{
+    margin-left: 40px;
+}
+
+li{
+    margin: 15px 0;
 }

@@ -5,12 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emails list</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='list.css') }}">
 </head>
 <body>
-    <p>Success</p>
-    {%for email in emails%}
-        <p>{{email.email}}</p>
-        <a href="/delete/{{email.id}}">delete</a>
-    {%endfor%}
+    <div id="bigcolumn">
+
+        <h1 class="titulo">Email Successfully Added</h1>
+
+        <ul>
+            {%for email in emails%}
+            <li>
+                <div class="row">
+                    <p>{{email.email}}</p>
+                    <a href="/delete/{{email.id}}">delete</a>
+                </div>
+            </li>
+            {%endfor%}
+        </ul>
+    </div>
 </body>
 </html>
