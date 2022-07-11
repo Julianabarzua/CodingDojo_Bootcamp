@@ -16,3 +16,22 @@ def create_book():
     }
     Book.save(data)
     return redirect("/books")
+
+@app.route("/books/<id>")
+def show_book(id):
+    data = {
+        "id": id
+    }
+    book = Book.get_book_with_authors(data)
+    authors = Author.unfavorited_authors(data)
+    return render_template("show_book.html", book=book, authors=authors)
+
+@app.route("/add_favorited_by/<book_id>", methods=["POST"] )
+def add_favorited_by(book_id):
+    data = {
+        'author_id' : request.form['author'],
+        'book_id' : book_id
+    }
+
+    Author.add_favorite(data)
+    return redirect("/books/"+book_id)

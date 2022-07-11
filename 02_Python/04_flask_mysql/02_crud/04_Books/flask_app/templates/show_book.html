@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='show.css') }}">
+
+</head>
+<body>
+    <div id="bigcolumn">
+
+        <div class="half-column">
+
+            
+            <h1 class="titulo">Title: {{book.title}}</h1>
+
+            <h2>Favorited by:</h2>
+            {%for one_author in book.favorited_by%}
+            <p>{{one_author.name}}</p>
+            {%endfor%}
+
+            
+            <a href="/authors">Home</a>
+        </div>
+        
+        
+        
+        <div class="half-column">
+            <h1 class="titulo">Add Book's Favorite:</h1>
+            
+            <form action="/add_favorited_by/{{book.id}}" method="post">
+                <label for="author">Author:</label>
+                
+                <select name="author" >
+                    {% for author in authors %}
+                    <option value="{{author.id}}">{{author.name}}</option>
+                    {% endfor %}
+                    
+                </select>
+
+                <input id="button" type="submit" value="Add">
+            </form>
+
+
+
+        </div>
+    </div>
+        
+    </body>
+    </html>
