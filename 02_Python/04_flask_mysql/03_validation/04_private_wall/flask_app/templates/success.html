@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='success.css') }}">
+
+</head>
+<body>
+    <header>
+        <h1>Coding Dojo Wall</h1>
+        <div class="flexbox">
+            <h4>Welcome {{usuarioLogeado[0]['first_name']}}!</h4> 
+            <a href="/logout">Log out</a>
+        </div>
+    </header>
+
+    <div id="bigcolumn">
+
+        <div class="halfcolumn">
+            <h2 class="titulo">Messages for you:</h2>
+            {%for message in messages%}
+            <div class="mensaje">
+                <h3>{{message['name']}} dice:</h3>
+                <p>{{message['message']}}</p>
+            </div>
+            {%endfor%}
+        </div>
+
+        <div class="halfcolumn">
+            <h2 class="titulo">Send Messages:</h2>
+
+            {%for user in otherusers%}
+            <form action="/add_message/{{user['id']}}" method="post">
+                <label for="content">{{user['name']}}</label>
+                <input type="text" name="content">
+                <input type="hidden" name="from_id" value="{{usuarioLogeado[0]['id']}}">
+                <input type="submit" value="Send Message">
+            </form>
+            {%endfor%}
+
+
+
+
+        </div>
+    </div>
+</body>
+</html>
