@@ -7,6 +7,8 @@ bcrypt = Bcrypt(app)
 
 @app.route("/")
 def index():
+    if 'user_id' in session:
+        return redirect('/success')
     return render_template("index.html")
 
 @app.route("/add_user", methods=['POST'])
