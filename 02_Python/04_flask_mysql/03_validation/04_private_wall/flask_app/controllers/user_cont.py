@@ -42,7 +42,9 @@ def logedin():
     usuarioLogeado = User.logedUser(data)
     messages = User.messagesforuser(data)
     print(messages)
-    return render_template("success.html", usuarioLogeado = usuarioLogeado, otherusers = otherusers, messages=messages)
+    count_from = User.count_from_messages(data)
+    count_to = User.count_to_messages(data)
+    return render_template("success.html", usuarioLogeado = usuarioLogeado, otherusers = otherusers, messages=messages, count_from = count_from[0]['COUNT(id)'], count_to = count_to[0]['COUNT(id)'])
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -69,6 +71,10 @@ def logout():
 
 @app.route("/add_message/<to_id>", methods = ['POST'])
 def add_message(to_id):
+    
+    if not User.validate_message(request.form):
+        return redirect("/success")
+    
     data = {
         "to_id": to_id,
         "from_id": request.form['from_id'],
@@ -76,4 +82,12 @@ def add_message(to_id):
     }
     User.save_message(data)
 
+    return redirect("/success")
+
+@app.route("/delete_message/<id>")
+def delete_message(id):
+    data = {
+        "id": id
+    }    
+    User.delete_message(data)
     return redirect("/success")

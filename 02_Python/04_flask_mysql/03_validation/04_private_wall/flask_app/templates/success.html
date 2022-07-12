@@ -20,17 +20,19 @@
     <div id="bigcolumn">
 
         <div class="halfcolumn">
-            <h2 class="titulo">Messages for you:</h2>
+            <h2 class="titulo">{{count_to}} Message(s) for you:</h2>
             {%for message in messages%}
             <div class="mensaje">
-                <h3>{{message['name']}} dice:</h3>
+                <h3>{{message['name']}} dice: ({{message['time']}} secs ago)</h3>
                 <p>{{message['message']}}</p>
+                <a id="deleteanchor" href="/delete_message/{{message['id']}}">delete</a>
             </div>
             {%endfor%}
         </div>
 
         <div class="halfcolumn">
             <h2 class="titulo">Send Messages:</h2>
+            <h4 style="color: black;">you have sent {{count_from}} message(s) so far.</h4>
 
             {%for user in otherusers%}
             <form action="/add_message/{{user['id']}}" method="post">
@@ -41,10 +43,14 @@
             </form>
             {%endfor%}
 
-
-
-
         </div>
     </div>
+    {% with messages = get_flashed_messages()%}
+    {%if messages%}
+    {%for message in messages%}
+    <p style="text-align:center ; color:red">{{message}}</p>
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
 </body>
 </html>

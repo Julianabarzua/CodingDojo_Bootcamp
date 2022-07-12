@@ -55,8 +55,8 @@ input[type=submit]{
     box-shadow: 2px 4px black;
 }
 
-a{
-    margin-top: 15px;
+#deleteanchor{
+    color: #0aa4e0;
 }
 
 

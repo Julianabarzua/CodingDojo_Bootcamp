@@ -92,7 +92,8 @@ class User:
         query = """
                 SELECT id, concat(first_name, ' ', last_name)as name
                 FROM users
-                WHERE id != %(id)s;
+                WHERE id != %(id)s
+                ORDER BY name;
         """
         resultado = connectToMySQL('wall_schema').query_db(query, data)
         return resultado
@@ -105,10 +106,36 @@ class User:
     @classmethod
     def messagesforuser(cls, data):
         query = """
-                SELECT messages.id, id_from, message, concat(first_name, ' ', last_name) as name
+                SELECT messages.id, id_from, message, concat(first_name, ' ', last_name) as name, NOW()-messages.created_at as time
                 FROM messages
                 JOIN users ON id_from = users.id
                 WHERE id_to = %(id)s
         """
         resultado = connectToMySQL('wall_schema').query_db(query, data)
         return resultado
+
+    @staticmethod
+    def validate_message(message):
+
+        is_valid = True
+
+        if len(message['content']) < 5:
+            flash("Message must be at least 5 characters.")
+            is_valid = False
+        
+        return is_valid
+
+    @classmethod
+    def delete_message(cls, data ):
+        query = "DELETE FROM messages WHERE id=%(id)s;"
+        return connectToMySQL('wall_schema').query_db( query, data )
+
+    @classmethod
+    def count_to_messages(cls, data ):
+        query = "SELECT COUNT(id) from messages where id_to=%(id)s;"
+        return connectToMySQL('wall_schema').query_db( query, data )
+
+    @classmethod
+    def count_from_messages(cls, data ):
+        query = "SELECT COUNT(id) from messages where id_from=%(id)s;"
+        return connectToMySQL('wall_schema').query_db( query, data )
