@@ -1,6 +1,7 @@
 from flask import flash, render_template, request, redirect, session
 from flask_app import app
 from flask_app.models.user_model import User
+from flask_app.models.recipe_mod import Recipe
 from flask_bcrypt import Bcrypt
 
 bcrypt = Bcrypt(app)
@@ -29,15 +30,6 @@ def add_user():
     session['user_id'] = user_id
     return redirect("/recipes")
 
-@app.route("/recipes")
-def logedin():
-    if 'user_id' not in session:
-        return redirect('/')
-    data = {
-        "id":session['user_id']
-    }
-    usuarioLogeado = User.logedUser(data)
-    return render_template("recipes.html", usuarioLogeado = usuarioLogeado)
 
 @app.route('/login', methods=['POST'])
 def login():
