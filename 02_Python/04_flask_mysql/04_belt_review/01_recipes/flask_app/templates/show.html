@@ -20,13 +20,15 @@
     <div id="bigcolumn">
 
         <h2 class="titulo">{{recipe[0]['name']}}</h2>
-        <p>{{recipe[0]['description']}}</p>
+        <p><span style="font-weight:bold ;">Description:</span> {{recipe[0]['description']}}</p><br>
         {%if recipe[0]['under_30'] == "1"%}
-            <p>YES</p>
+            <p><span style="font-weight:bold ;">Cooked under 30 minutes?:</span> YES</p>
         {%else%}
-            <p>NO</p>
+            <p><span style="font-weight:bold ;">Cooked under 30 minutes?:</span> NO</p>
         {%endif%}
+        <br><p style="font-weight:bold;">Instructions:</p>
         <p>{{recipe[0]['instructions']}}</p>
+        <br><p style="font-weight:bold;">Date cooked:</p>
         <p>{{recipe[0]['date_cooked']}}</p>
         
         

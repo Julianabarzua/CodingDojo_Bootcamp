@@ -57,17 +57,16 @@
 
             
         </form>
-        {% with messages = get_flashed_messages()%}
-        {%if messages%}
-        {%for message in messages%}
-        <p>{{message}}</p>
-        {%endfor%}
-        {%endif%}
-        {%endwith%}
-
-
         
-        <a href="/users/new">Add a new user</a>
+        
+        
     </div>
+    {% with messages = get_flashed_messages()%}
+    {%if messages%}
+    {%for message in messages%}
+    <p>{{message}}</p>
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
 </body>
 </html>

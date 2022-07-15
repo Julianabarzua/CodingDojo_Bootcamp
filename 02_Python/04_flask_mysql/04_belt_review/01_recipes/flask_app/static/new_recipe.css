@@ -79,4 +79,10 @@ input[type=submit]{
     box-shadow: 2px 4px black;
 }
 
+p{
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
 
